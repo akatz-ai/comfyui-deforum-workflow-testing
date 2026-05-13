@@ -74,23 +74,15 @@ download_url = "https://cdn.comfy.org/akatz/comfyui-basic-math/0.0.6/node.zip"
 source = "registry"
 criticality = "required"
 
-[tool.comfygit.nodes.comfyui_ryanonyheinside]
-name = "RyanOnTheInside"
-registry_id = "comfyui_ryanonyheinside"
-repository = "https://github.com/ryanontheinside/ComfyUI_RyanOnTheInside"
-version = "2.2.4"
-download_url = "https://cdn.comfy.org/ryanontheinside/comfyui_ryanonyheinside/2.2.4/node.zip"
-source = "registry"
-criticality = "required"
-
 [tool.comfygit.workflows."deforum_flux_complex_v0.0.3"]
 path = "workflows/deforum_flux_complex_v0.0.3.json"
-nodes = ["comfyui-basic-math", "comfyui-deforum", "comfyui_ryanonyheinside"]
+nodes = ["comfyui-basic-math", "comfyui-deforum"]
 
 [tool.comfygit.workflows."deforum_flux_complex_v0.0.3".custom_node_map]
 "AnySwitch| Deforum" = "comfyui-deforum"
 DeforumGetNode = "comfyui-deforum"
 DeforumSetNode = "comfyui-deforum"
+"FlexImageTransform| Deforum" = "comfyui-deforum"
 "LatentNoiseInjection| Deforum" = "comfyui-deforum"
 "PromptSchedule| Deforum" = "comfyui-deforum"
 "StringSchedule| Deforum" = "comfyui-deforum"
@@ -164,15 +156,4 @@ comfygit-manager-b2d41ad7 = [
     "zeroconf>=0.131.0",
 ]
 comfygit-system = ["uv>=0.11.8"]
-ryanontheinside-27d1fcfb = [
-    "matplotlib",
-    "mido",
-    "opencv-contrib-python-headless>=4.5.0",
-    "openunmix",
-    "pillow",
-    "pygame",
-    "pymunk>=6.8.0,<7.0.0",
-    "scikit-image",
-    "scipy",
-]
 comfyui-basic-math-66850bf1 = []

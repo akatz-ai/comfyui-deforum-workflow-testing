@@ -74,15 +74,6 @@ criticality = "required"
 branch = "main"
 pinned_commit = "db95f90a9b9ff071b04801f165447ef3d199e93f"
 
-[tool.comfygit.nodes.comfyui-frame-interpolation]
-name = "ComfyUI-Frame-Interpolation"
-registry_id = "comfyui-frame-interpolation"
-repository = "https://github.com/Fannovel16/ComfyUI-Frame-Interpolation"
-version = "1.0.11"
-download_url = "https://cdn.comfy.org/fannovel16/comfyui-frame-interpolation/1.0.11/node.zip"
-source = "registry"
-criticality = "required"
-
 [tool.comfygit.nodes.comfyui-basic-math]
 name = "ComfyUI-Basic-Math"
 registry_id = "comfyui-basic-math"
@@ -235,5 +226,4 @@ was-node-suite-revised-cfa8e86e = [
     "transformers",
 ]
 rgthree-comfy-c0668886 = []
-comfyui-frame-interpolation-d9d9c9be = []
 comfyui-basic-math-66850bf1 = []

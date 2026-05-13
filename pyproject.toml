@@ -101,23 +101,15 @@ download_url = "https://cdn.comfy.org/fizzledorf/comfyui_fizznodes/1.0.2/node.ta
 source = "registry"
 criticality = "required"
 
-[tool.comfygit.nodes.was-ns]
-name = "WAS Node Suite (Revised)"
-registry_id = "was-ns"
-repository = "https://github.com/ltdrdata/was-node-suite-comfyui"
-version = "3.0.1"
-download_url = "https://cdn.comfy.org/drltdata/was-ns/3.0.1/node.zip"
-source = "registry"
-criticality = "required"
-
 [tool.comfygit.workflows."deforum_flux_complex_v0.0.3"]
 path = "workflows/deforum_flux_complex_v0.0.3.json"
-nodes = ["comfyui-basic-math", "comfyui-deforum", "comfyui_fizznodes", "comfyui_ryanonyheinside", "rgthree-comfy", "was-ns"]
+nodes = ["comfyui-basic-math", "comfyui-deforum", "comfyui_fizznodes", "comfyui_ryanonyheinside", "rgthree-comfy"]
 
 [tool.comfygit.workflows."deforum_flux_complex_v0.0.3".custom_node_map]
 DeforumGetNode = "comfyui-deforum"
 DeforumSetNode = "comfyui-deforum"
 "Fast Groups Bypasser (rgthree)" = "rgthree-comfy"
+"LatentNoiseInjection| Deforum" = "comfyui-deforum"
 
 [[tool.comfygit.workflows."deforum_flux_complex_v0.0.3".models]]
 filename = "t5xxl_fp16.safetensors"
@@ -202,28 +194,6 @@ ryanontheinside-27d1fcfb = [
     "pymunk>=6.8.0,<7.0.0",
     "scikit-image",
     "scipy",
-]
-was-node-suite-revised-cfa8e86e = [
-    "cmake",
-    "cstr @ git+https://github.com/ltdrdata/cstr",
-    "fairscale>=0.4.4",
-    "ffmpy @ git+https://github.com/ltdrdata/ffmpy.git",
-    "gitpython",
-    "imageio",
-    "img2texture @ git+https://github.com/ltdrdata/img2texture.git",
-    "joblib",
-    "matplotlib",
-    "numba>=0.62",
-    "numpy",
-    "opencv-contrib-python-headless",
-    "pilgram",
-    "rembg",
-    "scikit-image>=0.20.0",
-    "scikit-learn",
-    "scipy",
-    "timm>=0.4.12",
-    "tqdm",
-    "transformers",
 ]
 rgthree-comfy-c0668886 = []
 comfyui-basic-math-66850bf1 = []

@@ -56,15 +56,6 @@ download_url = "https://cdn.comfy.org/akatz/comfygit-manager/0.1.1/node.zip"
 source = "registry"
 criticality = "required"
 
-[tool.comfygit.nodes.rgthree-comfy]
-name = "rgthree-comfy"
-registry_id = "rgthree-comfy"
-repository = "https://github.com/rgthree/rgthree-comfy"
-version = "1.0.2605082257"
-download_url = "https://cdn.comfy.org/rgthree/rgthree-comfy/1.0.2605082257/node.zip"
-source = "registry"
-criticality = "required"
-
 [tool.comfygit.nodes.comfyui-deforum]
 name = "ComfyUI-Deforum"
 repository = "https://github.com/deforum/deforum-comfy-nodes.git"
@@ -94,9 +85,10 @@ criticality = "required"
 
 [tool.comfygit.workflows."deforum_flux_complex_v0.0.3"]
 path = "workflows/deforum_flux_complex_v0.0.3.json"
-nodes = ["comfyui-basic-math", "comfyui-deforum", "comfyui_ryanonyheinside", "rgthree-comfy"]
+nodes = ["comfyui-basic-math", "comfyui-deforum", "comfyui_ryanonyheinside"]
 
 [tool.comfygit.workflows."deforum_flux_complex_v0.0.3".custom_node_map]
+"AnySwitch| Deforum" = "comfyui-deforum"
 DeforumGetNode = "comfyui-deforum"
 DeforumSetNode = "comfyui-deforum"
 "LatentNoiseInjection| Deforum" = "comfyui-deforum"
@@ -183,5 +175,4 @@ ryanontheinside-27d1fcfb = [
     "scikit-image",
     "scipy",
 ]
-rgthree-comfy-c0668886 = []
 comfyui-basic-math-66850bf1 = []

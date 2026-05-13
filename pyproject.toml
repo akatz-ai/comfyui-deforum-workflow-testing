@@ -55,6 +55,151 @@ version = "0.1.1"
 download_url = "https://cdn.comfy.org/akatz/comfygit-manager/0.1.1/node.zip"
 source = "registry"
 criticality = "required"
+
+[tool.comfygit.nodes.comfyui-kjnodes]
+name = "ComfyUI-KJNodes"
+registry_id = "comfyui-kjnodes"
+repository = "https://github.com/kijai/ComfyUI-KJNodes"
+version = "1.4.0"
+download_url = "https://cdn.comfy.org/kijai/comfyui-kjnodes/1.4.0/node.zip"
+source = "registry"
+criticality = "required"
+
+[tool.comfygit.nodes.rgthree-comfy]
+name = "rgthree-comfy"
+registry_id = "rgthree-comfy"
+repository = "https://github.com/rgthree/rgthree-comfy"
+version = "1.0.2605082257"
+download_url = "https://cdn.comfy.org/rgthree/rgthree-comfy/1.0.2605082257/node.zip"
+source = "registry"
+criticality = "required"
+
+[tool.comfygit.nodes.comfyui-deforum]
+name = "ComfyUI-Deforum"
+registry_id = "comfyui-deforum"
+repository = "https://github.com/deforum-art/deforum-comfy-nodes"
+version = "0.4.1"
+download_url = "https://cdn.comfy.org/deforum/comfyui-deforum/0.4.1/node.zip"
+source = "registry"
+criticality = "required"
+
+[tool.comfygit.nodes.comfyui-frame-interpolation]
+name = "ComfyUI-Frame-Interpolation"
+registry_id = "comfyui-frame-interpolation"
+repository = "https://github.com/Fannovel16/ComfyUI-Frame-Interpolation"
+version = "1.0.11"
+download_url = "https://cdn.comfy.org/fannovel16/comfyui-frame-interpolation/1.0.11/node.zip"
+source = "registry"
+criticality = "required"
+
+[tool.comfygit.nodes.comfyui-basic-math]
+name = "ComfyUI-Basic-Math"
+registry_id = "comfyui-basic-math"
+repository = "https://github.com/akatz-ai/ComfyUI-Basic-Math"
+version = "0.0.6"
+download_url = "https://cdn.comfy.org/akatz/comfyui-basic-math/0.0.6/node.zip"
+source = "registry"
+criticality = "required"
+
+[tool.comfygit.nodes.comfyui_ryanonyheinside]
+name = "RyanOnTheInside"
+registry_id = "comfyui_ryanonyheinside"
+repository = "https://github.com/ryanontheinside/ComfyUI_RyanOnTheInside"
+version = "2.2.4"
+download_url = "https://cdn.comfy.org/ryanontheinside/comfyui_ryanonyheinside/2.2.4/node.zip"
+source = "registry"
+criticality = "required"
+
+[tool.comfygit.nodes.comfyui_fizznodes]
+name = "ComfyUI_FizzNodes"
+registry_id = "comfyui_fizznodes"
+repository = "https://github.com/FizzleDorf/ComfyUI_FizzNodes"
+version = "1.0.2"
+download_url = "https://cdn.comfy.org/fizzledorf/comfyui_fizznodes/1.0.2/node.tar.gz"
+source = "registry"
+criticality = "required"
+
+[tool.comfygit.nodes.comfyui-videohelpersuite]
+name = "ComfyUI-VideoHelperSuite"
+registry_id = "comfyui-videohelpersuite"
+repository = "https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite"
+version = "1.7.9"
+download_url = "https://cdn.comfy.org/kosinkadink/comfyui-videohelpersuite/1.7.9/node.zip"
+source = "registry"
+criticality = "required"
+
+[tool.comfygit.nodes.was-ns]
+name = "WAS Node Suite (Revised)"
+registry_id = "was-ns"
+repository = "https://github.com/ltdrdata/was-node-suite-comfyui"
+version = "3.0.1"
+download_url = "https://cdn.comfy.org/drltdata/was-ns/3.0.1/node.zip"
+source = "registry"
+criticality = "required"
+
+[tool.comfygit.workflows."deforum_flux_complex_v0.0.3"]
+path = "workflows/deforum_flux_complex_v0.0.3.json"
+nodes = ["comfyui-basic-math", "comfyui-deforum", "comfyui-frame-interpolation", "comfyui-kjnodes", "comfyui-videohelpersuite", "comfyui_fizznodes", "comfyui_ryanonyheinside", "rgthree-comfy", "was-ns"]
+
+[tool.comfygit.workflows."deforum_flux_complex_v0.0.3".custom_node_map]
+"Fast Groups Bypasser (rgthree)" = "rgthree-comfy"
+
+[[tool.comfygit.workflows."deforum_flux_complex_v0.0.3".models]]
+filename = "ae.safetensors"
+category = "vae"
+criticality = "flexible"
+status = "resolved"
+nodes = [{node_id = "699", node_type = "VAELoader", widget_idx = 0, widget_value = "ae.safetensors"}]
+hash = "38f082e7b86d146b"
+
+[[tool.comfygit.workflows."deforum_flux_complex_v0.0.3".models]]
+filename = "t5xxl_fp16.safetensors"
+category = "clip"
+criticality = "required"
+status = "resolved"
+nodes = [{node_id = "698", node_type = "DualCLIPLoader", widget_idx = 0, widget_value = "t5xxl_fp16.safetensors"}]
+hash = "1d3825351f374aa7"
+
+[[tool.comfygit.workflows."deforum_flux_complex_v0.0.3".models]]
+filename = "clip_l.safetensors"
+category = "text_encoders"
+criticality = "flexible"
+status = "resolved"
+nodes = [{node_id = "698", node_type = "DualCLIPLoader", widget_idx = 1, widget_value = "clip_l.safetensors"}]
+hash = "a88c7c3d69609cdf"
+
+[[tool.comfygit.workflows."deforum_flux_complex_v0.0.3".models]]
+filename = "flux1-dev-fp8.safetensors"
+category = "checkpoints"
+criticality = "flexible"
+status = "resolved"
+nodes = [{node_id = "36", node_type = "CheckpointLoaderSimple", widget_idx = 0, widget_value = "flux1-dev-fp8.safetensors"}]
+hash = "78f49b2a2c359c37"
+
+[[tool.comfygit.workflows."deforum_flux_complex_v0.0.3".models]]
+filename = "Hyper-FLUX.1-dev-8steps-lora.safetensors"
+category = "loras"
+criticality = "flexible"
+status = "resolved"
+nodes = [{node_id = "490", node_type = "Lora Loader Stack (rgthree)", widget_idx = 0, widget_value = "Hyper-FLUX.1-dev-8steps-lora.safetensors"}]
+hash = "16dc7424ceec0771"
+
+[[tool.comfygit.workflows."deforum_flux_complex_v0.0.3".models]]
+filename = "FLUX-dev-lora-AntiBlur.safetensors"
+category = "loras"
+criticality = "flexible"
+status = "resolved"
+nodes = [{node_id = "490", node_type = "Lora Loader Stack (rgthree)", widget_idx = 2, widget_value = "FLUX-dev-lora-AntiBlur.safetensors"}]
+hash = "718b854a111f4401"
+
+[tool.comfygit.models]
+1d3825351f374aa7 = {filename = "t5xxl_fp16.safetensors", size = 9787841024, relative_path = "clip/t5xxl_fp16.safetensors", category = "clip", sources = ["https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/t5xxl_fp16.safetensors"]}
+38f082e7b86d146b = {filename = "ae.safetensors", size = 335304388, relative_path = "vae/ae.safetensors", category = "vae"}
+a88c7c3d69609cdf = {filename = "clip_l.safetensors", size = 246144152, relative_path = "text_encoders/clip_l.safetensors", category = "text_encoders"}
+78f49b2a2c359c37 = {filename = "flux1-dev-fp8.safetensors", size = 17246524772, relative_path = "checkpoints/flux1-dev-fp8.safetensors", category = "checkpoints", sources = ["https://huggingface.co/Comfy-Org/flux1-dev/resolve/main/flux1-dev-fp8.safetensors?download=true"]}
+16dc7424ceec0771 = {filename = "Hyper-FLUX.1-dev-8steps-lora.safetensors", size = 1388026440, relative_path = "loras/Hyper-FLUX.1-dev-8steps-lora.safetensors", category = "loras", sources = ["https://huggingface.co/ByteDance/Hyper-SD/resolve/main/Hyper-FLUX.1-dev-8steps-lora.safetensors?download=true"]}
+718b854a111f4401 = {filename = "FLUX-dev-lora-AntiBlur.safetensors", size = 687476088, relative_path = "loras/FLUX-dev-lora-AntiBlur.safetensors", category = "loras", sources = ["https://huggingface.co/Shakker-Labs/FLUX.1-dev-LoRA-AntiBlur/resolve/main/FLUX-dev-lora-AntiBlur.safetensors?download=true"]}
+
 [tool.uv]
 override-dependencies = ["uv>=0.11.8"]
 exclude-dependencies = ["opencv-contrib-python", "opencv-python", "opencv-python-headless"]
@@ -67,3 +212,56 @@ comfygit-manager-b2d41ad7 = [
     "zeroconf>=0.131.0",
 ]
 comfygit-system = ["uv>=0.11.8"]
+comfyui-fizznodes-bb0a0ce0 = [
+    "numexpr",
+    "numpy",
+    "pandas",
+]
+comfyui-kjnodes-f4971021 = [
+    "color-matcher",
+    "matplotlib",
+    "mss",
+    "opencv-contrib-python-headless",
+    "pillow>=10.3.0",
+]
+comfyui-videohelpersuite-879d1780 = [
+    "imageio-ffmpeg",
+    "opencv-contrib-python-headless",
+]
+ryanontheinside-27d1fcfb = [
+    "matplotlib",
+    "mido",
+    "opencv-contrib-python-headless>=4.5.0",
+    "openunmix",
+    "pillow",
+    "pygame",
+    "pymunk>=6.8.0,<7.0.0",
+    "scikit-image",
+    "scipy",
+]
+was-node-suite-revised-cfa8e86e = [
+    "cmake",
+    "cstr @ git+https://github.com/ltdrdata/cstr",
+    "fairscale>=0.4.4",
+    "ffmpy @ git+https://github.com/ltdrdata/ffmpy.git",
+    "gitpython",
+    "imageio",
+    "img2texture @ git+https://github.com/ltdrdata/img2texture.git",
+    "joblib",
+    "matplotlib",
+    "numba>=0.62",
+    "numpy",
+    "opencv-contrib-python-headless",
+    "pilgram",
+    "rembg",
+    "scikit-image>=0.20.0",
+    "scikit-learn",
+    "scipy",
+    "timm>=0.4.12",
+    "tqdm",
+    "transformers",
+]
+rgthree-comfy-c0668886 = []
+comfyui-deforum-86dd1455 = []
+comfyui-frame-interpolation-d9d9c9be = []
+comfyui-basic-math-66850bf1 = []

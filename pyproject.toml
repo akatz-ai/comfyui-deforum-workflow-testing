@@ -92,24 +92,18 @@ download_url = "https://cdn.comfy.org/ryanontheinside/comfyui_ryanonyheinside/2.
 source = "registry"
 criticality = "required"
 
-[tool.comfygit.nodes.comfyui_fizznodes]
-name = "ComfyUI_FizzNodes"
-registry_id = "comfyui_fizznodes"
-repository = "https://github.com/FizzleDorf/ComfyUI_FizzNodes"
-version = "1.0.2"
-download_url = "https://cdn.comfy.org/fizzledorf/comfyui_fizznodes/1.0.2/node.tar.gz"
-source = "registry"
-criticality = "required"
-
 [tool.comfygit.workflows."deforum_flux_complex_v0.0.3"]
 path = "workflows/deforum_flux_complex_v0.0.3.json"
-nodes = ["comfyui-basic-math", "comfyui-deforum", "comfyui_fizznodes", "comfyui_ryanonyheinside", "rgthree-comfy"]
+nodes = ["comfyui-basic-math", "comfyui-deforum", "comfyui_ryanonyheinside", "rgthree-comfy"]
 
 [tool.comfygit.workflows."deforum_flux_complex_v0.0.3".custom_node_map]
 DeforumGetNode = "comfyui-deforum"
 DeforumSetNode = "comfyui-deforum"
 "Fast Groups Bypasser (rgthree)" = "rgthree-comfy"
 "LatentNoiseInjection| Deforum" = "comfyui-deforum"
+"PromptSchedule| Deforum" = "comfyui-deforum"
+"StringSchedule| Deforum" = "comfyui-deforum"
+"ValueSchedule| Deforum" = "comfyui-deforum"
 
 [[tool.comfygit.workflows."deforum_flux_complex_v0.0.3".models]]
 filename = "t5xxl_fp16.safetensors"
@@ -179,11 +173,6 @@ comfygit-manager-b2d41ad7 = [
     "zeroconf>=0.131.0",
 ]
 comfygit-system = ["uv>=0.11.8"]
-comfyui-fizznodes-bb0a0ce0 = [
-    "numexpr",
-    "numpy",
-    "pandas",
-]
 ryanontheinside-27d1fcfb = [
     "matplotlib",
     "mido",

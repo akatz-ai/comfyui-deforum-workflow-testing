@@ -110,15 +110,6 @@ download_url = "https://cdn.comfy.org/fizzledorf/comfyui_fizznodes/1.0.2/node.ta
 source = "registry"
 criticality = "required"
 
-[tool.comfygit.nodes.comfyui-videohelpersuite]
-name = "ComfyUI-VideoHelperSuite"
-registry_id = "comfyui-videohelpersuite"
-repository = "https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite"
-version = "1.7.9"
-download_url = "https://cdn.comfy.org/kosinkadink/comfyui-videohelpersuite/1.7.9/node.zip"
-source = "registry"
-criticality = "required"
-
 [tool.comfygit.nodes.was-ns]
 name = "WAS Node Suite (Revised)"
 registry_id = "was-ns"
@@ -130,7 +121,7 @@ criticality = "required"
 
 [tool.comfygit.workflows."deforum_flux_complex_v0.0.3"]
 path = "workflows/deforum_flux_complex_v0.0.3.json"
-nodes = ["comfyui-basic-math", "comfyui-deforum", "comfyui-frame-interpolation", "comfyui-videohelpersuite", "comfyui_fizznodes", "comfyui_ryanonyheinside", "rgthree-comfy", "was-ns"]
+nodes = ["comfyui-basic-math", "comfyui-deforum", "comfyui_fizznodes", "comfyui_ryanonyheinside", "rgthree-comfy", "was-ns"]
 
 [tool.comfygit.workflows."deforum_flux_complex_v0.0.3".custom_node_map]
 DeforumGetNode = "comfyui-deforum"
@@ -209,10 +200,6 @@ comfyui-fizznodes-bb0a0ce0 = [
     "numexpr",
     "numpy",
     "pandas",
-]
-comfyui-videohelpersuite-879d1780 = [
-    "imageio-ffmpeg",
-    "opencv-contrib-python-headless",
 ]
 ryanontheinside-27d1fcfb = [
     "matplotlib",

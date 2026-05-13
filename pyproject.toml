@@ -56,15 +56,6 @@ download_url = "https://cdn.comfy.org/akatz/comfygit-manager/0.1.1/node.zip"
 source = "registry"
 criticality = "required"
 
-[tool.comfygit.nodes.comfyui-kjnodes]
-name = "ComfyUI-KJNodes"
-registry_id = "comfyui-kjnodes"
-repository = "https://github.com/kijai/ComfyUI-KJNodes"
-version = "1.4.0"
-download_url = "https://cdn.comfy.org/kijai/comfyui-kjnodes/1.4.0/node.zip"
-source = "registry"
-criticality = "required"
-
 [tool.comfygit.nodes.rgthree-comfy]
 name = "rgthree-comfy"
 registry_id = "rgthree-comfy"
@@ -139,34 +130,12 @@ criticality = "required"
 
 [tool.comfygit.workflows."deforum_flux_complex_v0.0.3"]
 path = "workflows/deforum_flux_complex_v0.0.3.json"
-nodes = ["comfyui-basic-math", "comfyui-deforum", "comfyui-frame-interpolation", "comfyui-kjnodes", "comfyui-videohelpersuite", "comfyui_fizznodes", "comfyui_ryanonyheinside", "rgthree-comfy", "was-ns"]
+nodes = ["comfyui-basic-math", "comfyui-deforum", "comfyui-frame-interpolation", "comfyui-videohelpersuite", "comfyui_fizznodes", "comfyui_ryanonyheinside", "rgthree-comfy", "was-ns"]
 
 [tool.comfygit.workflows."deforum_flux_complex_v0.0.3".custom_node_map]
+DeforumGetNode = "comfyui-deforum"
+DeforumSetNode = "comfyui-deforum"
 "Fast Groups Bypasser (rgthree)" = "rgthree-comfy"
-
-[[tool.comfygit.workflows."deforum_flux_complex_v0.0.3".models]]
-filename = "flux1-dev-fp8.safetensors"
-category = "checkpoints"
-criticality = "flexible"
-status = "resolved"
-nodes = [{node_id = "36", node_type = "CheckpointLoaderSimple", widget_idx = 0, widget_value = "flux1-dev-fp8.safetensors"}]
-hash = "78f49b2a2c359c37"
-
-[[tool.comfygit.workflows."deforum_flux_complex_v0.0.3".models]]
-filename = "Hyper-FLUX.1-dev-8steps-lora.safetensors"
-category = "loras"
-criticality = "flexible"
-status = "resolved"
-nodes = [{node_id = "490", node_type = "Lora Loader Stack (rgthree)", widget_idx = 0, widget_value = "Hyper-FLUX.1-dev-8steps-lora.safetensors"}]
-hash = "16dc7424ceec0771"
-
-[[tool.comfygit.workflows."deforum_flux_complex_v0.0.3".models]]
-filename = "FLUX-dev-lora-AntiBlur.safetensors"
-category = "loras"
-criticality = "flexible"
-status = "resolved"
-nodes = [{node_id = "490", node_type = "Lora Loader Stack (rgthree)", widget_idx = 2, widget_value = "FLUX-dev-lora-AntiBlur.safetensors"}]
-hash = "718b854a111f4401"
 
 [[tool.comfygit.workflows."deforum_flux_complex_v0.0.3".models]]
 filename = "t5xxl_fp16.safetensors"
@@ -192,6 +161,30 @@ status = "resolved"
 nodes = [{node_id = "699", node_type = "VAELoader", widget_idx = 0, widget_value = "ae.safetensors"}]
 hash = "38f082e7b86d146b"
 
+[[tool.comfygit.workflows."deforum_flux_complex_v0.0.3".models]]
+filename = "Hyper-FLUX.1-dev-8steps-lora.safetensors"
+category = "loras"
+criticality = "flexible"
+status = "resolved"
+nodes = [{node_id = "763", node_type = "LoraLoaderModelOnly", widget_idx = 0, widget_value = "Hyper-FLUX.1-dev-8steps-lora.safetensors"}]
+hash = "16dc7424ceec0771"
+
+[[tool.comfygit.workflows."deforum_flux_complex_v0.0.3".models]]
+filename = "FLUX-dev-lora-AntiBlur.safetensors"
+category = "loras"
+criticality = "flexible"
+status = "resolved"
+nodes = [{node_id = "765", node_type = "LoraLoaderModelOnly", widget_idx = 0, widget_value = "FLUX-dev-lora-AntiBlur.safetensors"}]
+hash = "718b854a111f4401"
+
+[[tool.comfygit.workflows."deforum_flux_complex_v0.0.3".models]]
+filename = "flux1-dev-fp8.safetensors"
+category = "checkpoints"
+criticality = "flexible"
+status = "resolved"
+nodes = [{node_id = "36", node_type = "CheckpointLoaderSimple", widget_idx = 0, widget_value = "flux1-dev-fp8.safetensors"}]
+hash = "78f49b2a2c359c37"
+
 [tool.comfygit.models]
 1d3825351f374aa7 = {filename = "t5xxl_fp16.safetensors", size = 9787841024, relative_path = "clip/t5xxl_fp16.safetensors", category = "clip", sources = ["https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/t5xxl_fp16.safetensors"]}
 38f082e7b86d146b = {filename = "ae.safetensors", size = 335304388, relative_path = "vae/ae.safetensors", category = "vae"}
@@ -216,13 +209,6 @@ comfyui-fizznodes-bb0a0ce0 = [
     "numexpr",
     "numpy",
     "pandas",
-]
-comfyui-kjnodes-f4971021 = [
-    "color-matcher",
-    "matplotlib",
-    "mss",
-    "opencv-contrib-python-headless",
-    "pillow>=10.3.0",
 ]
 comfyui-videohelpersuite-879d1780 = [
     "imageio-ffmpeg",

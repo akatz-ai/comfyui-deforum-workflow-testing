@@ -136,6 +136,65 @@ status = "resolved"
 nodes = [{node_id = "36", node_type = "CheckpointLoaderSimple", widget_idx = 0, widget_value = "flux1-dev-fp8.safetensors"}]
 hash = "78f49b2a2c359c37"
 
+[tool.comfygit.workflows."deforum_flux_complex_v0.0.4"]
+path = "workflows/deforum_flux_complex_v0.0.4.json"
+nodes = ["comfyui-basic-math", "comfyui-deforum"]
+
+[tool.comfygit.workflows."deforum_flux_complex_v0.0.4".custom_node_map]
+DeforumGetNode = "comfyui-deforum"
+DeforumSetNode = "comfyui-deforum"
+"AnySwitch| Deforum" = "comfyui-deforum"
+"ImageTransform| Deforum" = "comfyui-deforum"
+"ImageColorMatch| Deforum" = "comfyui-deforum"
+
+[[tool.comfygit.workflows."deforum_flux_complex_v0.0.4".models]]
+filename = "t5xxl_fp16.safetensors"
+category = "clip"
+criticality = "required"
+status = "resolved"
+nodes = [{node_id = "698", node_type = "DualCLIPLoader", widget_idx = 0, widget_value = "t5xxl_fp16.safetensors"}]
+hash = "1d3825351f374aa7"
+
+[[tool.comfygit.workflows."deforum_flux_complex_v0.0.4".models]]
+filename = "clip_l.safetensors"
+category = "text_encoders"
+criticality = "flexible"
+status = "resolved"
+nodes = [{node_id = "698", node_type = "DualCLIPLoader", widget_idx = 1, widget_value = "clip_l.safetensors"}]
+hash = "a88c7c3d69609cdf"
+
+[[tool.comfygit.workflows."deforum_flux_complex_v0.0.4".models]]
+filename = "ae.safetensors"
+category = "vae"
+criticality = "flexible"
+status = "resolved"
+nodes = [{node_id = "699", node_type = "VAELoader", widget_idx = 0, widget_value = "ae.safetensors"}]
+hash = "38f082e7b86d146b"
+
+[[tool.comfygit.workflows."deforum_flux_complex_v0.0.4".models]]
+filename = "Hyper-FLUX.1-dev-8steps-lora.safetensors"
+category = "loras"
+criticality = "flexible"
+status = "resolved"
+nodes = [{node_id = "763", node_type = "LoraLoaderModelOnly", widget_idx = 0, widget_value = "Hyper-FLUX.1-dev-8steps-lora.safetensors"}]
+hash = "16dc7424ceec0771"
+
+[[tool.comfygit.workflows."deforum_flux_complex_v0.0.4".models]]
+filename = "flux1-dev-fp8.safetensors"
+category = "checkpoints"
+criticality = "flexible"
+status = "resolved"
+nodes = [{node_id = "36", node_type = "CheckpointLoaderSimple", widget_idx = 0, widget_value = "flux1-dev-fp8.safetensors"}]
+hash = "78f49b2a2c359c37"
+
+[[tool.comfygit.workflows."deforum_flux_complex_v0.0.4".models]]
+filename = "FLUX-dev-lora-AntiBlur.safetensors"
+category = "loras"
+criticality = "flexible"
+status = "resolved"
+nodes = [{node_id = "765", node_type = "LoraLoaderModelOnly", widget_idx = 0, widget_value = "FLUX-dev-lora-AntiBlur.safetensors"}]
+hash = "718b854a111f4401"
+
 [tool.comfygit.models]
 1d3825351f374aa7 = {filename = "t5xxl_fp16.safetensors", size = 9787841024, relative_path = "clip/t5xxl_fp16.safetensors", category = "clip", sources = ["https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/t5xxl_fp16.safetensors"]}
 38f082e7b86d146b = {filename = "ae.safetensors", size = 335304388, relative_path = "vae/ae.safetensors", category = "vae"}

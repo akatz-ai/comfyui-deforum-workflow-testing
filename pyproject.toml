@@ -115,7 +115,7 @@ hash = "718b854a111f4401"
 718b854a111f4401 = {filename = "FLUX-dev-lora-AntiBlur.safetensors", size = 687476088, relative_path = "loras/FLUX-dev-lora-AntiBlur.safetensors", category = "loras", sources = ["https://huggingface.co/Shakker-Labs/FLUX.1-dev-LoRA-AntiBlur/resolve/main/FLUX-dev-lora-AntiBlur.safetensors?download=true"]}
 
 [tool.uv]
-override-dependencies = ["uv>=0.11.8"]
+override-dependencies = ["uv>=0.10.0"]
 exclude-dependencies = ["opencv-contrib-python", "opencv-python", "opencv-python-headless"]
 
 [dependency-groups]
@@ -125,5 +125,6 @@ comfygit-manager-b2d41ad7 = [
     "xxhash>=3.5.0",
     "zeroconf>=0.131.0",
 ]
-comfygit-system = ["uv>=0.11.8"]
+comfygit-system = ["uv>=0.10.0"]
 comfyui-basic-math-66850bf1 = []
+comfyui-deforum-86dd1455 = []

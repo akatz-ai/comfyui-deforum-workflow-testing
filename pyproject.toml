@@ -109,6 +109,203 @@ status = "resolved"
 nodes = [{node_id = "765", node_type = "LoraLoaderModelOnly", widget_idx = 0, widget_value = "FLUX-dev-lora-AntiBlur.safetensors"}]
 hash = "718b854a111f4401"
 
+[tool.comfygit.workflows."deforum_flux_complex_v0.0.4".execution_contract]
+version = 1
+default_contract = "default"
+api_prompt_file = "workflow_api/deforum_flux_complex_v0.0.4.api.json"
+api_prompt_source = "comfyui_frontend"
+api_prompt_generated_by = "comfygit-manager"
+api_prompt_generated_at = "2026-05-15T07:38:33.329141Z"
+
+[tool.comfygit.workflows."deforum_flux_complex_v0.0.4".execution_contract.contracts.default]
+display_name = "Deforum"
+description = "Create a deforum-style animation"
+
+[[tool.comfygit.workflows."deforum_flux_complex_v0.0.4".execution_contract.contracts.default.inputs]]
+name = "width"
+type = "integer"
+node_id = "76"
+required = true
+display_name = "Width"
+widget_idx = 0
+field_key = "value"
+api_node_id = "76"
+api_field_key = "value"
+default = 1024
+min = 128
+max = 4096
+
+[[tool.comfygit.workflows."deforum_flux_complex_v0.0.4".execution_contract.contracts.default.inputs]]
+name = "height"
+type = "integer"
+node_id = "77"
+required = true
+display_name = "Height"
+widget_idx = 0
+field_key = "value"
+api_node_id = "77"
+api_field_key = "value"
+default = 1024
+min = 128
+max = 4096
+
+[[tool.comfygit.workflows."deforum_flux_complex_v0.0.4".execution_contract.contracts.default.inputs]]
+name = "num_frames"
+type = "integer"
+node_id = "35"
+required = true
+display_name = "Num Frames"
+widget_idx = 0
+field_key = "value"
+api_node_id = "35"
+api_field_key = "value"
+default = 10
+min = 1
+max = 500
+
+[[tool.comfygit.workflows."deforum_flux_complex_v0.0.4".execution_contract.contracts.default.inputs]]
+name = "seed"
+type = "integer"
+node_id = "244"
+required = true
+display_name = "Seed"
+widget_idx = 0
+field_key = "value"
+api_node_id = "244"
+api_field_key = "value"
+default = 15
+min = 0
+max = 999999999
+
+[[tool.comfygit.workflows."deforum_flux_complex_v0.0.4".execution_contract.contracts.default.inputs]]
+name = "default_steps"
+type = "integer"
+node_id = "362"
+required = true
+display_name = "Steps"
+widget_idx = 0
+field_key = "value"
+api_node_id = "362"
+api_field_key = "value"
+default = 8
+min = 1
+max = 20
+
+[[tool.comfygit.workflows."deforum_flux_complex_v0.0.4".execution_contract.contracts.default.inputs]]
+name = "default_denoise"
+type = "number"
+node_id = "760"
+required = true
+display_name = "Denoise"
+widget_idx = 0
+field_key = "value"
+api_node_id = "760"
+api_field_key = "value"
+default = 0.5
+min = 0
+max = 1
+
+[[tool.comfygit.workflows."deforum_flux_complex_v0.0.4".execution_contract.contracts.default.inputs]]
+name = "cfg"
+type = "number"
+node_id = "761"
+required = true
+display_name = "CFG"
+widget_idx = 0
+field_key = "value"
+api_node_id = "761"
+api_field_key = "value"
+default = 3.5
+min = 0
+max = 10
+
+[[tool.comfygit.workflows."deforum_flux_complex_v0.0.4".execution_contract.contracts.default.inputs]]
+name = "x_trans"
+type = "number"
+node_id = "770"
+required = true
+display_name = "X Translation"
+widget_idx = 0
+field_key = "value"
+api_node_id = "770"
+api_field_key = "value"
+default = "10.0"
+min = -1000
+max = 1000
+
+[[tool.comfygit.workflows."deforum_flux_complex_v0.0.4".execution_contract.contracts.default.inputs]]
+name = "y_trans"
+type = "number"
+node_id = "771"
+required = true
+display_name = "Y Translation"
+widget_idx = 0
+field_key = "value"
+api_node_id = "771"
+api_field_key = "value"
+default = 10
+min = -1000
+max = 1000
+
+[[tool.comfygit.workflows."deforum_flux_complex_v0.0.4".execution_contract.contracts.default.inputs]]
+name = "zoom"
+type = "number"
+node_id = "772"
+required = true
+display_name = "Zoom"
+widget_idx = 0
+field_key = "value"
+api_node_id = "772"
+api_field_key = "value"
+default = 0.1
+min = -10
+max = 10
+
+[[tool.comfygit.workflows."deforum_flux_complex_v0.0.4".execution_contract.contracts.default.inputs]]
+name = "rotation"
+type = "number"
+node_id = "773"
+required = true
+display_name = "Rotation"
+widget_idx = 0
+field_key = "value"
+api_node_id = "773"
+api_field_key = "value"
+default = -1
+min = -360
+max = 360
+
+[[tool.comfygit.workflows."deforum_flux_complex_v0.0.4".execution_contract.contracts.default.inputs]]
+name = "prompt_schedule"
+type = "string"
+node_id = "32"
+required = true
+display_name = "Prompt Schedule"
+widget_idx = 0
+field_key = "text"
+api_node_id = "32"
+api_field_key = "text"
+default = "\"0\": \"Cat sushi\",\n\"30\": \"A cat running on the beach\""
+
+[[tool.comfygit.workflows."deforum_flux_complex_v0.0.4".execution_contract.contracts.default.inputs]]
+name = "image"
+type = "image"
+node_id = "280"
+required = true
+display_name = "Image"
+widget_idx = 0
+field_key = "image"
+api_node_id = "280"
+api_field_key = "image"
+default = ""
+
+[[tool.comfygit.workflows."deforum_flux_complex_v0.0.4".execution_contract.contracts.default.outputs]]
+name = "save_video"
+type = "video"
+node_id = "779"
+display_name = "Save Video"
+selector = "primary"
+
 [tool.comfygit.models]
 78f49b2a2c359c37 = {filename = "flux1-dev-fp8.safetensors", size = 17246524772, relative_path = "checkpoints/flux1-dev-fp8.safetensors", category = "checkpoints", sources = ["https://huggingface.co/Comfy-Org/flux1-dev/resolve/main/flux1-dev-fp8.safetensors?download=true"]}
 16dc7424ceec0771 = {filename = "Hyper-FLUX.1-dev-8steps-lora.safetensors", size = 1388026440, relative_path = "loras/Hyper-FLUX.1-dev-8steps-lora.safetensors", category = "loras", sources = ["https://huggingface.co/ByteDance/Hyper-SD/resolve/main/Hyper-FLUX.1-dev-8steps-lora.safetensors?download=true"]}

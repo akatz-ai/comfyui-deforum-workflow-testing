@@ -123,7 +123,7 @@ default_contract = "default"
 api_prompt_file = "workflow_api/deforum_flux_complex_v0.0.4.api.json"
 api_prompt_source = "comfyui_frontend"
 api_prompt_generated_by = "comfygit-manager"
-api_prompt_generated_at = "2026-05-21T07:28:48.430201Z"
+api_prompt_generated_at = "2026-05-21T07:29:36.784786Z"
 
 [tool.comfygit.workflows."deforum_flux_complex_v0.0.4".execution_contract.contracts.default]
 display_name = "Deforum"
@@ -308,9 +308,16 @@ api_field_key = "image"
 default = ""
 
 [[tool.comfygit.workflows."deforum_flux_complex_v0.0.4".execution_contract.contracts.default.outputs]]
-name = "save_video"
+name = "save_video_smooth"
 type = "video"
 node_id = "779"
+display_name = "Save Video Interpolated"
+selector = "primary"
+
+[[tool.comfygit.workflows."deforum_flux_complex_v0.0.4".execution_contract.contracts.default.outputs]]
+name = "save_video"
+type = "video"
+node_id = "777"
 display_name = "Save Video"
 selector = "primary"
 

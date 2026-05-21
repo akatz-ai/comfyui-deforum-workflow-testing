@@ -696,6 +696,18 @@
       "title": "VAE Decode"
     }
   },
+  "568": {
+    "inputs": {
+      "images": [
+        "33",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
   "593": {
     "inputs": {
       "value": 0.10000000000000002
@@ -1013,6 +1025,23 @@
       "title": "Batch Latents"
     }
   },
+  "751": {
+    "inputs": {
+      "multiplier": 2,
+      "interp_model": [
+        "793",
+        0
+      ],
+      "images": [
+        "33",
+        0
+      ]
+    },
+    "class_type": "FrameInterpolate",
+    "_meta": {
+      "title": "Frame Interpolate"
+    }
+  },
   "760": {
     "inputs": {
       "value": 0.5
@@ -1135,9 +1164,36 @@
       "filename_prefix": "video/ComfyUI",
       "format": "auto",
       "codec": "auto",
-      "video-preview": "",
       "video": [
         "774",
+        0
+      ]
+    },
+    "class_type": "SaveVideo",
+    "_meta": {
+      "title": "Save Video"
+    }
+  },
+  "778": {
+    "inputs": {
+      "fps": 24,
+      "images": [
+        "751",
+        0
+      ]
+    },
+    "class_type": "CreateVideo",
+    "_meta": {
+      "title": "Create Video"
+    }
+  },
+  "779": {
+    "inputs": {
+      "filename_prefix": "video/ComfyUI",
+      "format": "auto",
+      "codec": "auto",
+      "video": [
+        "778",
         0
       ]
     },
@@ -1199,6 +1255,15 @@
     "class_type": "ImageColorMatch| Deforum",
     "_meta": {
       "title": "Image Color Match | Deforum"
+    }
+  },
+  "793": {
+    "inputs": {
+      "model_name": "film_net_fp16.safetensors"
+    },
+    "class_type": "FrameInterpolationModelLoader",
+    "_meta": {
+      "title": "Load Frame Interpolation Model"
     }
   }
 }

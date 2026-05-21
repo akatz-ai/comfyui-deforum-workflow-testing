@@ -47,15 +47,6 @@ comfyui_version_type = "release"
 comfyui_commit_sha = "52976f3ea33cc2312c7b5a32e1c7510b203eefb6"
 python_version = "3.12"
 
-[tool.comfygit.nodes.comfygit-manager]
-name = "comfygit-manager"
-registry_id = "comfygit-manager"
-repository = "https://github.com/comfygit-ai/comfygit-manager"
-version = "0.1.1"
-download_url = "https://cdn.comfy.org/akatz/comfygit-manager/0.1.1/node.zip"
-source = "registry"
-criticality = "required"
-
 [tool.comfygit.nodes.comfyui-basic-math]
 name = "ComfyUI-Basic-Math"
 registry_id = "comfyui-basic-math"
@@ -71,6 +62,15 @@ registry_id = "comfyui-deforum"
 repository = "https://github.com/deforum-art/deforum-comfy-nodes"
 version = "0.5.0"
 download_url = "https://cdn.comfy.org/deforum/comfyui-deforum/0.5.0/node.zip"
+source = "registry"
+criticality = "required"
+
+[tool.comfygit.nodes.comfygit-manager]
+name = "comfygit-manager"
+registry_id = "comfygit-manager"
+repository = "https://github.com/comfygit-ai/comfygit-manager"
+version = "0.1.3"
+download_url = "https://cdn.comfy.org/akatz/comfygit-manager/0.1.3/node.zip"
 source = "registry"
 criticality = "required"
 
@@ -115,7 +115,7 @@ default_contract = "default"
 api_prompt_file = "workflow_api/deforum_flux_complex_v0.0.4.api.json"
 api_prompt_source = "comfyui_frontend"
 api_prompt_generated_by = "comfygit-manager"
-api_prompt_generated_at = "2026-05-15T08:19:29.200194Z"
+api_prompt_generated_at = "2026-05-15T08:34:16.501713Z"
 
 [tool.comfygit.workflows."deforum_flux_complex_v0.0.4".execution_contract.contracts.default]
 display_name = "Deforum"
@@ -317,7 +317,7 @@ exclude-dependencies = ["opencv-contrib-python", "opencv-python", "opencv-python
 
 [dependency-groups]
 comfygit-manager-b2d41ad7 = [
-    "comfygit-core==0.4.0",
+    "comfygit-core==0.4.2",
     "watchdog>=6.0.0",
     "xxhash>=3.5.0",
     "zeroconf>=0.131.0",
